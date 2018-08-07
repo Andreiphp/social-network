@@ -1,0 +1,27 @@
+<div class="header">
+    <nav class="nav_main">
+        <div class="logo">
+            <img src="../../../assets/img/logo.png">
+        </div>
+        <nav-search class="responsive_nav"></nav-search>
+        <div class="user_icon">
+            <a class="user_icon_link" (click)="menuOpen()">
+                <span>{{user_info.name}}</span>
+                <span>{{user_info.lastname}}</span>
+                <img src="../../../assets/img/{{user_info.img}}">
+                <span [ngClass]="open_menu === false ? 'caret' : 'caret_to' "></span>
+            </a>
+            <ul class="menu_enter" [ngClass]="open_menu === false ? 'show_' : 'hide_'">
+                <li (click)="enter()">выйти</li>
+            </ul>
+        </div>
+        <language-switcher class="lang_switcher"></language-switcher>
+    </nav>
+</div>
+<div class="container">
+    <user-menu-adapt></user-menu-adapt>
+    <user-menu style="width: 30%"></user-menu>
+    <router-outlet></router-outlet>
+</div>
+<user-notification></user-notification>
+

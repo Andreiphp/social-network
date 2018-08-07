@@ -1,0 +1,13 @@
+<div class="profile_panel_adapt">
+  <div (click)="open_adapt_menu()" class="open_adapt">{{'menu_adapt' | localisationPipe}}</div>
+  <ul class="profile_list" [ngClass]="open_adapt === true ? 'op_adapt' : 'close_adapt'">
+    <li><a class="active" [routerLink]="['/user/profile/', user_info.id ]">{{'may_page' | localisationPipe}}</a>
+    </li>
+    <li><a>{{'images' | localisationPipe}}</a></li>
+    <li><a routerLink="/user/friends">{{'friends' | localisationPipe}}</a>
+    </li>
+    <li><a routerLink="/user/message">{{'messages' | localisationPipe}}</a>
+    </li>
+    <li><a>{{'redact' | localisationPipe}}</a></li>
+  </ul>
+</div>

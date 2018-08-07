@@ -1,0 +1,150 @@
+\:host
+  width: 60%
+  margin-top: 30px
+  .messages_send
+    padding: 20px
+    display: block
+    justify-content: space-between
+    align-items: center
+    background: #f9f9f9
+  .users_messages
+    max-width: 500px
+    margin-top: 30px
+
+    .ms
+      margin: 15px 0
+      .message_feed
+        display: flex
+        justify-content: end
+        flex-direction: row-reverse
+        list-style-type: none
+      .message_my
+        display: flex
+        justify-content: end
+        flex-direction: row
+        list-style-type: none
+      @at-root
+        .message_header
+          display: flex
+          justify-content: center
+          width: 20%
+          .img_wr
+            width: 100%
+            max-height: 90px
+            padding: 2px
+            img
+              width: 68px
+              height: 68px
+              border-radius: 50em
+
+        .mess_content
+          position: relative
+          width: 80%
+          font-size: 11px
+          padding: 10px
+          border: 1px solid #f1f5fc
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+          background-color: #fff
+          .user_name_my, .user_name_feed
+            display: flex
+            justify-content: space-between
+            width: 100%
+            padding-bottom: 5px
+            border-bottom: 1px solid #f1f5fc
+
+          .user_name_my
+            text-align: left
+          .user_name_feed
+            text-align: right
+            flex-direction: row-reverse
+
+          .user_link
+            text-decoration: none
+            color: #3c8dbc
+            font-weight: 700
+            &:hover
+              color: #444444
+          .date_message
+            color: #777
+            font-size: 12px
+          .message
+            margin-top: 10px
+            display: block
+            width: 100%
+            font-size: 13px
+            word-wrap: break-word
+
+.c-main, .c-feed
+  &:before
+    position: absolute
+    top: 10px
+    display: inline-block
+    background: #fff
+    width: 16px
+    height: 16px
+    content: ''
+    transform: rotate(-45deg)
+
+.c-main
+  &:before
+    left: -10px
+    border-top: 1px solid #f1f5fc
+    border-left: 1px solid #f1f5fc
+
+.c-feed
+  &:before
+    right: -10px
+    border-bottom: 1px solid #f1f5fc
+    border-right: 1px solid #f1f5fc
+
+.message_input
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.14)
+  margin-bottom: 20px
+  background-color: #fff
+  border: 1px solid transparent
+  border-radius: 4px
+  max-width: 500px
+  div
+    background: #ff7970
+    padding: 10px
+  .inp_send
+    width: 100%
+    padding: 6px 15px
+    box-sizing: border-box
+    display: block
+    font-size: 14px
+    line-height: 1.42857143
+    color: #555
+    background-color: #fff
+    background-image: none
+    border: 1px solid #ccc
+    border-radius: 4px
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+    resize: none
+    overflow: hidden
+  .btn_send
+    display: inline-block
+    padding: 6px 12px
+    margin-bottom: 0
+    font-size: 14px
+    font-weight: 400
+    line-height: 1.42857143
+    text-align: center
+    white-space: nowrap
+    vertical-align: middle
+    touch-action: manipulation
+    cursor: pointer
+    user-select: none
+    background-image: none
+    border: 1px solid transparent
+    border-radius: 4px
+    margin-top: 5px
+    background: #FFFFFF
+    color: #444444
+
+@media only screen and (max-width: 1200px)
+  \:host
+    width: 100%
+    .users_messages
+      max-width: 80%

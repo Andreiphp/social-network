@@ -1,0 +1,19 @@
+<div class="post_message">
+    <div class="users_res">
+        <ul class="users_list" *ngIf="searchList">
+            <li class="users_item" *ngFor="let user of result  | userSearchPipe : searchDate">
+                <a href="" [routerLink]="['/user/view/profile/', user.id]">
+                    <img src="../../../assets/img/{{user.img}}">
+                    <span>{{user.name}}</span>
+                    <span>{{user.lastname}}</span>
+                </a>
+
+                <span *ngIf="user.status === 2"><button class="add_friend" (click)="add_friend(user, $event)">добавить в друзья</button></span>
+                <span *ngIf="user.status === 1"><button class="added_friend" disabled="disabled"
+                                                        (click)="add_friend(user, $event)">пользователь добавлен</button></span>
+
+            </li>
+            <li class="users_item" *ngIf="not_found">ни чего не найденно</li>
+        </ul>
+    </div>
+</div>

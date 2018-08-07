@@ -1,0 +1,208 @@
+$main_color: #3f8be1
+$color_text: #939598
+$main_font: "Kavivanar"
+
+a
+  text-decoration: none
+  text-transform: none
+
+.container
+  max-width: 1175px
+  margin: 0 auto
+
+#main
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+  background-position: center
+  background-size: cover
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  min-height: 100vh
+  .wrapper
+    padding-top: 140px
+    padding-bottom: 140px
+    max-width: 1170px
+    margin: 0 auto
+
+@at-root
+  .reg_form
+    width: 50%
+    margin: 0 auto
+    height: 560px
+    background: #ffffff
+    box-sizing: border-box
+    border-radius: 30px
+
+    .reg_form_container
+      background: #ffffff
+      box-shadow: 0 0 28px #ffffff
+      padding: 40px 40px 40px 60px
+      width: 100%
+      height: 100%
+      position: relative
+      box-sizing: border-box
+      border-radius: 30px
+      .reg_options
+        &:before
+          content: ''
+          position: absolute
+          height: 70%
+          width: 50px
+          left: 0
+          top: 50%
+          transform: translateX(-100%) translateY(-50%)
+          border-radius: 6px 0 0 6px
+          z-index: 1
+          background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05))
+      .nav_tabs
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%) translateX(-58%) rotate(270deg)
+        border: navajowhite
+        display: flex
+        list-style-type: none
+
+        z-index: 2
+        li
+          margin-right: 25px
+          margin-left: 25px
+          position: relative
+          &:first-child
+            &:after
+              background: rgba(255, 255, 255, 0.1)
+              content: ''
+              position: absolute
+              display: block
+              height: 25px
+              width: 1px
+              right: -21px
+              top: 1px
+
+          a
+            color: #ffffff
+            font-weight: 800
+            background: transparent
+            text-transform: uppercase
+
+.tab_content
+  .tab_pane
+    display: block
+    h3
+      color: $main_color
+    .text_muted
+      color: $color_text
+    .my_email, .my_password
+      margin-bottom: 10px
+      padding-left: 10px
+  @at-root
+    .form-control
+      box-shadow: none
+      background: #ffffff
+      color: $color_text
+      border: 1px solid
+      height: 34px
+      padding: 6px 12px
+      font-size: 14px
+      width: 100%
+      margin-bottom: 20px
+      border-color: $main_color
+  .tab_pane
+    display: block
+
+@at-root
+  .btn_primary
+    background: $main_color
+    padding: 7px 25px
+    color: #ffffff
+    position: relative
+    font-weight: 600
+    outline: #27aae1
+    border-radius: 30px
+
+  .form_group
+    display: flex
+    justify-content: space-between
+    .last_name, .input_name
+      width: calc(100% / 2 - 35px)
+    .select_day, .select_moth, .select_year
+      width: calc(100% / 3 - 10px)
+    .select
+      width: 100%
+
+input.ng-touched.ng-invalid
+  border: solid #ff6348 2px
+
+input.ng-touched.ng-valid
+  border: solid #5a8028 2px
+
+.successful_registration
+  position: fixed
+  left: 45%
+  top: 50%
+  width: 251px
+  height: 100px
+  background: #f1f2f2
+  color: #444444
+  z-index: 1000
+  text-align: center
+  box-shadow: 0px 1px 1px 1px #ff6348
+  span
+    cursor: pointer
+    position: absolute
+    left: 97%
+    top: -8px
+    width: 18px
+    padding-top: 20px
+    display: flex
+    justify-content: center
+    height: 18px
+    padding: 5px
+    background: red
+    color: lemonchiffon
+    border-radius: 50%
+    &:hover
+      background: #110000
+      color: #fffacd
+
+@media only screen and (max-width: 1200px)
+  .reg_form
+    padding-left: 10px
+    padding-right: 10px
+
+@media only screen and (max-width: 968px)
+  .reg_form
+    width: 70%
+
+@media only screen and (max-width: 634px)
+  .reg_form
+    width: 78%
+    padding-left: 0px
+    padding-right: 0px
+  .form_group
+    flex-direction: column
+  .form_group .last_name, .form_group .input_name
+    width: 100%
+  .form_group .select_day, .form_group .select_moth, .form_group .select_year
+    width: 100%
+  .form_last
+    flex-direction: row
+
+@media only screen and (max-width: 450px)
+  .reg_form
+    margin-left: 62px
+    width: 78%
+    padding-left: 0px
+    padding-right: 0px
+  .reg_form .reg_form_container
+    padding: 40px 40px 40px 17px
+  .form_group
+    display: flex
+    justify-content: space-between
+    flex-direction: row !important
+    flex-wrap: wrap
+  .form-control
+    width: 90%!important
+
+

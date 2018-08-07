@@ -1,0 +1,23 @@
+<div class="profile_panel">
+    <div class="panel">
+        <div class="user_header">
+            <a>
+                <img src="../../../assets/img/{{user_img}}">
+            </a>
+            <h1>{{user_info.name}} {{user_info.lastname}}</h1>
+        </div>
+        <ul class="profile_list">
+            <li routerLinkActive="active" ><a class="active" [routerLink]="['/user/profile/', user_info.id ]">{{'may_page' | localisationPipe}}</a>
+            </li>
+            <li routerLinkActive="active" ><a routerLink="/user/images">{{'images' | localisationPipe}}</a></li>
+            <li routerLinkActive="active" ><a routerLink="/user/friends">{{'friends' | localisationPipe}}<span
+                    *ngIf='notificationServices.count_new_friends'>{{notificationServices.count_new_friends}}</span></a>
+            </li>
+            <li routerLinkActive="active" ><a routerLink="/user/message">{{'messages' | localisationPipe}}<span
+                    *ngIf='notificationServices.newMessages'>{{notificationServices.newMessages}}</span></a>
+            </li>
+            <li><a>{{'redact' | localisationPipe}}</a></li>
+        </ul>
+    </div>
+</div>
+

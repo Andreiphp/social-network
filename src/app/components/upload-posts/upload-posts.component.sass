@@ -1,0 +1,91 @@
+\:host
+  background: #fffacd
+  width: 50%
+  margin-top: 30px
+
+.post_message
+  margin-top: 0
+  width: 100%
+  .panel
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.14)
+    textarea
+      width: 100%
+      padding: 6px 15px
+      box-sizing: border-box
+      display: block
+      font-size: 14px
+      line-height: 1.42857143
+      color: #555
+      background-color: #fff
+      background-image: none
+      border: 1px solid #ccc
+      border-radius: 4px
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+      resize: none
+      overflow: hidden
+  .panel_footer
+    padding: 10px 15px
+    background-color: #f5f5f5
+    border-top: 1px solid #ddd
+    border-bottom-right-radius: 3px
+    border-bottom-left-radius: 3px
+    display: flex
+  .btn
+    display: inline-block
+    padding: 6px 12px
+    margin: 0 5px
+    font-size: 14px
+    font-weight: 400
+    line-height: 1.42857143
+    text-align: center
+    white-space: nowrap
+    vertical-align: middle
+    touch-action: manipulation
+    cursor: pointer
+    user-select: none
+    background-image: none
+    border: 1px solid
+    border-radius: 4px
+    color: #fff
+    background-color: #d9534f
+    border-color: #d43f3a
+  .post_message_list
+    display: flex
+    list-style-type: none
+    justify-content: center
+    width: 100%
+    .file-upload
+      position: relative
+      width: 80px
+      height: 20px
+      background: #ff766c
+      border-radius: 3px
+      padding: 8px 4px
+      color: #fff
+      text-align: center
+      &:hover
+        background: #ff766c
+    .file-upload input[type="file"]
+      display: none
+    .file-upload label
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      cursor: pointer
+    .file-upload span
+      line-height: 36px
+    li
+      margin-left: 10px
+      width: 100%
+
+@media only screen and (max-width: 800px)
+  \:host
+    background: #fffacd
+    width: 100%
+    margin-top: 30px
+  .post_message
+    margin-top: 25px

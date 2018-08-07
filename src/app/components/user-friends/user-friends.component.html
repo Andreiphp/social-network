@@ -1,0 +1,27 @@
+<div class="user_friends">
+    <div class="u_friends">
+        <div class="user" *ngFor="let user of friends">
+            <a [routerLink]="['/user/view/profile/', user.friends_id]">
+                <img class="user_img" src="../../../assets/img/{{user.friends_img}}">
+                <h3 class="user_name">{{user.friends_name}} {{user.friends_lastname}}</h3>
+            </a>
+            <div class="block_button">
+                <button (click)="deleteFriend(user)">{{'delete_friend_btn' | localisationPipe}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="u_friends">
+        <div class="user no_add_fr" *ngFor="let user of usersConfirm">
+            <a [routerLink]="['/user/view/profile/', user.friends_id]">
+                <img class="user_img" src="../../../assets/img/{{user.friends_img}}">
+                <h3 class="user_name">{{user.friends_name}} {{user.friends_lastname}}</h3>
+            </a>
+
+            <div class="block_button" [ngSwitch]="user.status">
+                <button *ngSwitchCase="0" (click)="confirmFriends(user)">{{'confirm' | localisationPipe}}</button>
+                <button *ngSwitchCase="1" (click)="cancelFriend(user)">{{'cancel_the_request' | localisationPipe}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

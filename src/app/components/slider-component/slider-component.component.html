@@ -1,0 +1,13 @@
+<div id="position_wrapper" class="wrapper_block">
+
+    <div id="position_slider" [ngStyle]="{'transform': 'translate3d('+position_wrapper+'px, 0px, 0px)'}" class="slider-images">
+        <div id="position_border" class="images-border"
+             [ngStyle]="{'transform': 'translate3d('+position_border+'px, 0px, 0px)'}"></div>
+        <div class="image-item" *ngFor="let image of images">
+            <img class="r" id="{{image.id}}" (click)="setBorder($event, image.image)" dataher='image.image'
+                 src="http://localhost:8080/user-image/{{image.image}}">
+        </div>
+    </div>
+</div>
+<span class="left" (click)="flipping(true)"><</span>
+<span class="right" (click)="flipping(false)">></span>

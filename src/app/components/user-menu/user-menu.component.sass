@@ -1,0 +1,72 @@
+*
+  margin: 0
+  padding: 0
+
+.profile_panel
+  margin-top: 30px
+  padding: 0 10px
+  .panel
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.14)
+    .user_header
+      background: #ff766c
+      color: #fff
+      border-radius: 4px 4px 0 0
+      padding: 30px
+      text-align: center
+      a
+        max-height: 200px
+        max-width: 200px
+        border: 10px solid rgba(255, 255, 255, 0.3)
+        display: inline-block
+        img
+          //width: 215px
+          //height: 240px
+          border-radius: 50%
+          display: inline-block
+          height: 100%
+          width: 100%
+      h1
+        font-size: 20px
+        margin-bottom: 5px
+        margin-top: 10px
+        font-weight: 300
+  .profile_list
+    margin-top: 2px
+    list-style-type: none
+    li
+      border-bottom: 1px solid #ebeae6
+      margin-top: 0
+      line-height: 30px
+      a
+        position: relative
+        display: block
+        padding: 10px 15px
+        color: #89817f
+        border-left: 5px solid #fff
+        &:hover
+          background: #f8f7f5 !important
+          border-left: 5px solid #ff766c
+          color: #89817f !important
+        span
+          position: absolute
+          left: 95%
+          color: red
+    .active
+      a
+        background: #f8f7f5 !important
+        border-left: 5px solid #ff766c
+        color: #89817f !important
+
+.profile_panel_adapt
+  display: none
+
+.fixed
+  position: fixed
+  top: 0
+  margin-top: 0
+  width: 340px
+
+@media only screen and (max-width: 800px)
+  \:host
+    display: none
+

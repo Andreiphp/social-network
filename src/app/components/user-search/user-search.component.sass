@@ -1,0 +1,60 @@
+\:host
+  background: #FFFFFF
+  width: 60%
+  margin-top: 30px
+  padding: 0 5px
+
+.users_item
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 10px
+  box-shadow: 1px 1px 1px 1px #444444
+  margin-bottom: 5px
+  a
+    display: flex
+    justify-content: space-between
+    align-items: center
+  @at-root
+    img
+      width: 115px
+      height: 115px
+  button
+    margin-right: 100px
+  .add_friend
+    border-radius: 46px
+    width: 66%
+    height: 42px
+    background: #ff766c
+    color: #FFFFFF
+    outline-color: #458245
+    border: #FFFFFF
+    &:hover
+      border: #110000
+      cursor: pointer
+  .added_friend
+    border-radius: 26px
+    width: 66%
+    height: 54px
+    border: none
+    color: darkred
+    background: indianred
+
+@media only screen and (max-width: 800px)
+  \:host
+    width: 92%
+    margin: 50px auto 0
+
+@media only screen and (max-width: 550px)
+
+  img
+    width: 90px
+    height: 90px
+
+@media only screen and (max-width: 500px)
+  .users_item
+    span
+      width: 32%
+      .added_friend, .add_friend
+        height: 30px
+        font-size: 12px

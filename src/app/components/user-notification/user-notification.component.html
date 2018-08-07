@@ -1,0 +1,10 @@
+<div *ngIf="notificationServices.block_message" class="notification" (click)="hide_notification()">
+    <span>Вам пришо новое сообщение от {{sender_name}} {{sender_lastName}}</span>
+
+</div>
+<audio id="audio_mess" src="../../../assets/audio/message.mp3"></audio>
+<div *ngIf="notificationServices.block_friends" class="notification" (click)="hide_notification_friend()">
+    <span>Звпрос в друзья от {{reqFriend_name}} {{reqFriend_lastName}}</span>
+
+</div>
+<audio id="audio_friends" src="../../../assets/audio/friends.mp3" ></audio>

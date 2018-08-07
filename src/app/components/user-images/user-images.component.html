@@ -1,0 +1,25 @@
+<div class="user_images">
+    <form #myForm="ngForm" name="form" method="post" enctype="multipart/form-data">
+        <div class="panel_footer">
+            <button type="button" (click)="uploadImages()" class="btn">{{'bnt_send' | localisationPipe}}
+            </button>
+            <ul class="post_message_list">
+                <li>
+                    <div class="file-upload">
+                        <label>
+                            <input (change)="onFileChangeImages($event)" type="file" name="files">
+                            <span>{{"Photo_upload" | localisationPipe}}</span>
+                        </label>
+                    </div>
+                </li>
+            </ul>
+            <span class="name_photo" *ngIf="file">{{file.name}}</span>
+        </div>
+    </form>
+</div>
+<div class="image-list">
+    <div class="image-item" *ngFor="let image of images">
+        <img (click)="viewImages(image.image)" src="http://localhost:8080/user-image/{{image.image}}">
+    </div>
+</div>
+<gallery-images (OnCloseImages)="OnCloseImages($event)" *ngIf="galleryImages.show"></gallery-images>

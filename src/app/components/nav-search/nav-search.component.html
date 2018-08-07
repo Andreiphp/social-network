@@ -1,0 +1,12 @@
+<div class="search">
+    <input class="search_input" type="search" [placeholder]="'search_form' | localisationPipe" [(ngModel)]='searchDate'
+           (ngModelChange)="onSearchChange($event)">
+    <ul class="search_list" *ngIf="visible">
+        <li value="" *ngFor="let user of users">
+            <a (click)="hideSearch()" [routerLink]="['/user/view/profile', user.id ]"><img
+                    src='../../../assets/img/{{user.img}}'><span>{{user.name}}{{user.lastname}}</span></a>
+        </li>
+        <li><a routerLink="/user/search/{{searchDate}}" (click)="hideSearch()">{{'search_all'| localisationPipe}}</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+{
+  "code": "en-GB",
+  "bnt_send": "send",
+  "user_img": "images",
+  "send_message": "send",
+  "search_all": "view all results",
+  "may_page": "My page",
+  "friends":"Friends",
+  "messages" : "Messages",
+  "redact":"Edit",
+  "images": "Images",
+  "menu_adapt": "Menu",
+  "Photo_upload": "photo",
+  "delete_friend_btn": "delete",
+  "confirm": "confirm",
+  "cancel_the_request" : "to cancel the request",
+  "Select_person": "Select a person",
+  "search_form": "search",
+  "send_private_mess": "Send message",
+  "whats_new": "What's new?"
+}

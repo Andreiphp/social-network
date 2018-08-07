@@ -1,0 +1,23 @@
+<div class="post_message">
+    <div class="panel">
+        <form name="form" method="post" enctype="multipart/form-data">
+            <textarea [placeholder]="'whats_new' | localisationPipe" [style.height]="height"
+                      (keydown)="resize($event)"
+                      [(ngModel)]='textPost' name='post'></textarea>
+            <div class="panel_footer">
+                <button type="button" (click)="uploadPost($event)" class="btn">{{'bnt_send' | localisationPipe}}
+                </button>
+                <ul class="post_message_list">
+                    <li>
+                        <div class="file-upload">
+                            <label>
+                                <input (change)="onFileChange($event)" type="file" name="files">
+                                <span>{{"Photo_upload" | localisationPipe}}</span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>

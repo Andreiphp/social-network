@@ -1,0 +1,32 @@
+<div class="messages">
+    <div class="create_discussion">
+        <select class="select_friends" #friend (change)="onChange($event, friend.value)">
+            <option [value]="0" selected>{{'Select_person' | localisationPipe}}</option>
+            <option *ngFor="let friend of friends" [value]="friend.friends_id">{{friend.friends_name}}
+                {{friend.friends_lastname}}
+            </option>
+        </select>
+    </div>
+    <div class="discus_rooms">
+        <div *ngFor="let room of rooms">
+            <div class="rooms_list" *ngIf="usersServices.user_info.id === room.creator  && room.creator_status !== 2 || (usersServices.user_info.id === room.participant &&  room.participant_status !== 2 ) ">
+                <a class="rooms_link" [routerLink]="['/user/room/', room.id]">
+                    <div class="img_friend">
+                        <img *ngIf='usersServices.user_info.id !== room.creator'
+                             src="../../../assets/img/{{room.creator_img}}">
+                        <img *ngIf='usersServices.user_info.id !== room.participant'
+                             src="../../../assets/img/{{room.participant_img}}">
+                    </div>
+                    <div class="rooms_preview">
+                        <span *ngIf='usersServices.user_info.id !== room.creator'>{{room.creator_name}}</span>
+                        <span *ngIf='usersServices.user_info.id !== room.participant'>{{room.participant_name}}</span>
+                        <div class="rooms_preview_mess">
+                            {{room.last_mess}}
+                        </div>
+                    </div>
+                </a>
+                <button class="deleteRoom" (click)="deleteRoom(room)">x</button>
+            </div>
+        </div>
+    </div>
+</div>

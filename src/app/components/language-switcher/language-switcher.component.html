@@ -1,0 +1,5 @@
+<select [(ngModel)]="currentLanguage" class="lang_switcher">
+    <option *ngFor="let lang of gelLangList()" [value]="lang.code">
+        {{lang.title}}
+    </option>
+</select>

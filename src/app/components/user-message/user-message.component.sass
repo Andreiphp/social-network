@@ -1,0 +1,70 @@
+\:host
+  background: #FFFFFF
+  width: 60%
+  margin-top: 30px
+  box-shadow: 0 1px 1px 1px #ab9d9c
+  .messages
+    padding: 20px
+    display: block
+    justify-content: space-between
+    align-items: center
+
+.rooms_list
+  max-width: 500px
+  padding: 5px
+  margin: 20px 0px
+  background: #d2d7de
+  transition: 0.5s all
+  position: relative
+  min-height: 75px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  &:hover
+    background: #deb7a1
+
+.rooms_link
+  display: flex
+  text-decoration: none
+
+  .img_friend
+    width: 20%
+    img
+      display: inline-block
+      width: 62px
+      height: 61px
+      border-radius: 30px
+
+  .rooms_preview
+    width: 80%
+    margin: 0 34px
+    span
+      color: #f1f2f2
+      padding: 5px
+    .rooms_preview_mess
+      max-height: 87px
+      font-size: 13px
+      padding: 10px
+      white-space: pre
+      overflow: hidden
+      text-overflow: ellipsis
+      color: white
+
+.deleteRoom
+  width: 21px
+  color: #a79595
+.select_friends
+  width: 222px
+  padding: 10px
+  border: 3px solid #ff766c
+  border-radius: 13px
+  color: white
+  background: #ff766c
+  outline: none
+@media only screen and (max-width: 800px)
+  \:host
+    background: #fffacd
+    width: 100%
+    margin-top: 30px
+
+

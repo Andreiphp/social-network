@@ -1,0 +1,150 @@
+\:host
+  display: block
+$main_color: #ff766c
+.container
+  height: 100%
+
+nav
+  max-width: 1200px
+  margin: 0 auto
+  display: flex
+  max-height: 50px
+  background: $main_color
+  justify-content: space-around
+  color: #fff
+  align-items: center
+  flex-direction: revert
+
+.logo
+  width: 150px
+  height: 100%
+  img
+    width: 100%
+    height: 100%
+    display: inline-block
+
+.user_icon
+  width: 150px
+  height: 100%
+  box-sizing: border-box
+  display: flex
+  position: relative
+  a
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-left: 10px
+    padding-right: 5px
+    height: 50px
+    width: 100%
+    box-sizing: border-box
+    background: #ff6664
+    position: relative
+    cursor: pointer
+    .caret
+      display: inline-block
+      width: 0
+      height: 0
+      margin-left: 2px
+      vertical-align: middle
+      border-top: 4px dashed
+      border-top: 4px solid
+      border-right: 4px solid transparent
+      border-left: 4px solid transparent
+    .caret_to
+      display: inline-block
+      width: 0
+      height: 0
+      margin-left: 2px
+      vertical-align: middle
+      border-bottom: 4px dashed
+      border-bottom: 4px solid
+      border-right: 4px solid transparent
+      border-left: 4px solid transparent
+    img
+      width: 25px
+      height: 25px
+      margin-top: -3px
+      padding-right: 10px
+  .show_
+    display: none
+  .hide_
+    display: block
+
+.menu_enter
+  cursor: pointer
+  position: absolute
+  top: 102%
+  width: 100%
+  text-align: center
+  list-style-type: none
+  background: #ff766c
+  z-index: 1000
+  li
+    border: 1px solid #FFFFFF
+    color: #FFFFFF
+
+.search
+  max-width: 250px
+  width: 30%
+  input
+    width: 100%
+    background-color: #FFFFFF
+    border: 1px solid #E3E3E3
+    border-radius: 4px
+    box-shadow: none
+    color: #444444
+    height: 38px
+    padding: 6px 16px
+
+//    //header and
+@media only screen and (max-width: 1200px)
+  .responsive_nav
+    display: block
+
+@media only screen and (max-width: 1200px)
+  .responsive_nav
+    display: block
+
+@media only screen and (max-width: 800px)
+  .header
+    height: 115px
+    background: #ff766c
+  .nav_main
+    position: relative
+    height: 100%
+    padding: 0 5px
+    justify-content: space-between
+  .responsive_nav
+    position: absolute
+    top: 57px
+    left: 0
+    width: 50%
+    margin: 0
+    padding: 5px
+  .lang_switcher
+    text-align: center
+    position: absolute
+    top: 57px
+    width: 45%
+    right: 6px
+    margin: 0 0 10px
+    padding: 5px
+
+
+@media only screen and (max-width: 500px)
+  .logo
+    width: 108px
+    height: 90%
+    img
+      height: 45px
+  .user_icon
+    width: 125px
+    .user_icon_link
+      padding: 0
+      height: 45px
+
+
+
+
+

@@ -1,0 +1,50 @@
+\:host
+  display: none
+@media only screen and (max-width: 800px)
+  \:host
+    display: block
+  .open_adapt
+    cursor: pointer
+    color: #FFFFFF
+    background: #ff766c
+  .profile_panel
+    display: none
+  .profile_panel_adapt
+    box-shadow: 2px 1px 1px 2px white
+    display: block
+    position: absolute
+    height: 25px
+    background: #ff766c
+    padding: 10px 0
+    text-align: center
+    width: 100%
+    .op_adapt
+      position: relative
+      z-index: 1000
+      display: block
+    .close_adapt
+      display: none
+    .profile_list
+      margin: 0
+      padding: 0
+      margin-top: 16px
+      width: 100%
+      background: #FFFFFF
+      li
+        width: 100%
+        border-bottom: 1px solid #ff6664
+        a
+          padding: 10px 0
+          display: block
+          width: 100%
+          height: 100%
+          text-decoration: none
+          color: #ff766c
+        .active
+          padding: 10px 0
+          margin: 0
+          background: #ff6664
+          color: #FFFFFF
+        &:hover
+          box-shadow: 1px 1px 1px 1px #ff6664
+

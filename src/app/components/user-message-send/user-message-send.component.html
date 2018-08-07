@@ -1,0 +1,33 @@
+<div class="messages_send">
+    <div class="message_input">
+        <div class="mess_block" *ngIf="!status">
+            <textarea class="inp_send" [(ngModel)]="text"
+                      [placeholder]="'send_private_mess' | localisationPipe">{{text}}</textarea>
+            <button class="btn_send" (click)="send_message(text)">{{'send_message' | localisationPipe}}</button>
+        </div>
+
+        <div *ngIf="status">
+            <p>переписка отменена</p>
+        </div>
+    </div>
+    <div class="users_messages">
+        <div class="ms" *ngFor="let message of messages">
+            <div class="message_feed" [class]="message.id === userServices.user_info.id?'message_my':'message_feed'">
+                <div class="message_header">
+                    <a [routerLink]="['/user/view/profile/', message.id]">
+                        <div class="img_wr"><img src="../../../assets/img/{{message.img}}"></div>
+                    </a>
+                </div>
+                <div [class]="message.id === userServices.user_info.id?'mess_content c-main':'mess_content c-feed'">
+                    <span [class]="message.id === userServices.user_info.id?'user_name_my':'user_name_feed'">
+                        <a class="user_link" [routerLink]="['/user/view/profile/', message.id]">{{message.name}}</a>
+                        <span class="date_message">{{message.date | DateFormatPipe : localisation.currentLanguage}}</span>
+                    </span>
+                    <span class="message">
+                  {{message.message}}
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
