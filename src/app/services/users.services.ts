@@ -79,14 +79,14 @@ export class UsersServices {
     // }
 
     // getFriend(room_id: number) {
-    //     return this.http.post(`http://localhost:8080/getFriend_for_room`, room_id);
+    //     return this.http.post(`http://localhost:8081/getFriend_for_room`, room_id);
     // }
 
     checkUser(date: CheckUser) {
-        return this.http.post(`http://localhost:8080/check_login`, date);
+        return this.http.post(`http://localhost:8081/check_login`, date);
     }
 
     registerUser(date: RegistrationUser) {
-        return this.http.post(`http://localhost:8080/save_user`, date);
+        return this.http.post(`http://localhost:8081/save_user`, date);
     }
 }

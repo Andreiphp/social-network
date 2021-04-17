@@ -19,7 +19,7 @@
 </div>
 <div class="image-list">
     <div class="image-item" *ngFor="let image of images">
-        <img (click)="viewImages(image.image)" src="http://localhost:8080/user-image/{{image.image}}">
+        <img (click)="viewImages(image.image)" src="http://localhost:8081/user-image/{{image.image}}">
     </div>
 </div>
 <gallery-images (OnCloseImages)="OnCloseImages($event)" *ngIf="galleryImages.show"></gallery-images>

@@ -29,11 +29,11 @@ export class PostsServices {
     }
 
     upload(file: FormData): Observable<boolean | object> {
-        return this.http.post(`http://localhost:8080/upload`, file);
+        return this.http.post(`http://localhost:8081/upload`, file);
     }
 
     getPosts(user_r): Observable<any> {
-        return this.http.post(`http://localhost:8080/getUserPosts`, {'user_id': user_r});
+        return this.http.post(`http://localhost:8081/getUserPosts`, {'user_id': user_r});
     }
 
     addComment(comment_info: CommentInterfaces, user_r: number, id_post): void {
@@ -41,7 +41,7 @@ export class PostsServices {
     }
 
     saveComment(comment_info: CommentInterfaces): Observable<object> {
-        return this.http.post(`http://localhost:8080/saveComment`, {'comment_info': comment_info});
+        return this.http.post(`http://localhost:8081/saveComment`, {'comment_info': comment_info});
     }
 
 }

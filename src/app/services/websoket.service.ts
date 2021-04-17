@@ -7,7 +7,7 @@ import {CommentInterfaces} from '../interfaces/comment-interfaces';
 @Injectable()
 export class WebsoketService {
 
-    public socket = io('http://localhost:8080');
+    public socket = io('http://localhost:8081');
 
     constructor() {
     }

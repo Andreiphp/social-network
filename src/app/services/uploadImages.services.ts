@@ -8,11 +8,11 @@ export class UploadImagesServices {
     }
 
     upload(form_data: FormData): Observable<any> {
-        return this.http.post('http://localhost:8080/uploadImageServices', form_data);
+        return this.http.post('http://localhost:8081/uploadImageServices', form_data);
     }
 
     getUsersImage(user_id: number): Observable<object> {
-        return this.http.post('http://localhost:8080/getUsersImages', {user_id: user_id});
+        return this.http.post('http://localhost:8081/getUsersImages', {user_id: user_id});
     }
 
 }

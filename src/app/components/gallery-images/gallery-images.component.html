@@ -2,7 +2,7 @@
 <div class="gallery-images">
     <span class="close" (click)="closeImages(false)">x</span>
     <div class="gallery-images-wrapper">
-        <img src="http://localhost:8080/user-gallery/{{currentImage}}">
+        <img src="http://localhost:8081/user-gallery/{{currentImage}}">
     </div>
     <slider-component  [position_wrapper]="border"
                       (changeCurrentImage)="changeCurrentImage($event)"></slider-component>

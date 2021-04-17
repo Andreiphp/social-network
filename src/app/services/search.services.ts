@@ -19,7 +19,7 @@ export class SearchServices {
     }
 
     resolve(): Observable<Object> {
-        return this.http.post(`http://localhost:8080/search_user`, this.postReq)
+        return this.http.post(`http://localhost:8081/search_user`, this.postReq)
             .pipe(
                 map(localization => {
                     return this.result = localization;
@@ -37,7 +37,7 @@ export class SearchServices {
 
     getSearchUsers(date) {
         this.postReq.search = date;
-        return this.http.post(`http://localhost:8080/search_user`, this.postReq);
+        return this.http.post(`http://localhost:8081/search_user`, this.postReq);
     }
 
     checkPath() {
