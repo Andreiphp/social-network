@@ -1,6 +1,8 @@
 ---
 - name: Apache install
   hosts: client
+  become: yes
+
   vars: 
     source: index.html
     destination: /var/www/html
@@ -8,6 +10,10 @@
   task: 
     - name: Install Apache
       apt: name=apache2 state=latest
+
+    - name: Copy website
+      copy: src={{source}} dest={{destination}} mode=0644
+      notify: Reastart apache2
 
     -name: Print source
       debug:
