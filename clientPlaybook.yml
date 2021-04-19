@@ -1,6 +1,5 @@
 ---
-- name: Apache install
-  hosts: client
+- hosts: client
   become: yes
 
   vars: 
