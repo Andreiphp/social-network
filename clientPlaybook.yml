@@ -15,10 +15,10 @@
       copy: src={{source}} dest={{destination}} mode=0644
       notify: Reastart apache2
 
-    -name: Print source
+    - name: Print source
       debug:
         var: source
         var: destination
-    -name: Print msg
+    - name: Print msg
       debug:
         msg: ansible_os_type    
