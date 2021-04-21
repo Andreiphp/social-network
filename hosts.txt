@@ -1,2 +1,2 @@
 [clients]
-ansible_ssh_host=18.206.233.90 ansible_ssh_port=22 ansible_user=terraform
+ansible_ssh_host=3.239.37.72  ansible_ssh_port=22 ansible_user=ubuntu
