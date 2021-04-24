@@ -1,0 +1,65 @@
+---
+- name: Config webservers nginx
+  hosts: clients
+  become: true
+  become_method: sudo
+  tasks:
+    - name: install packages
+      apt: 
+        name: "{{i}}"
+        state: present
+        update_cache: yes
+      loop: 
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg
+        - lsb-release
+
+    - name: add key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: add repository docker
+      apt_repository:
+      repo: deb https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+      state: present
+
+    - name: install docker
+      apt: 
+        name: "{{i}}"
+        state: latest
+        update_cache: yes
+      loop: 
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+
+    - name: start docker
+      service: 
+        name: docker
+        state: started
+        enabled: yes
+
+  handlers: 
+    - name: restart docker
+      service:
+        name: docker
+        state: restarted    
+
+
+    # - name: install nginx
+    #   apt: name=nginx update_cache=yes
+
+    # - name: copy nginx config file
+    #   copy: src=files/nginx.conf dest=/etc/nginx/sites-available/default
+    
+    # - name: enable configuration 
+    #   file: dest=/etc/nginx/sites-enabled/default src=/etc/nginx/sites-available/default state=link
+  
+    # - name: copy index.html
+    #   template: src=templates/index.html.j2 dest=/var/www/html/index.html mode=0644
+  
+    # - name: restart nginx
+    #   service: name=nginx state=restarted
