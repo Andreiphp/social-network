@@ -23,8 +23,8 @@
 
     - name: add repository docker
       apt_repository:
-      repo: deb https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-      state: present
+        repo: deb https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        state: present
 
     - name: install docker
       apt: 
