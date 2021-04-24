@@ -4,9 +4,12 @@
   become: true
   become_method: sudo
   vars:
-       IMAGE_DEFAULT: "{{ $BUILD_NUMBER }}"
+       IMAGE_DEFAULT: 39
 
   tasks:
+    - name: "Ansible | Print a variable"
+      debug:
+      msg: "The operating system is {{ ansible_distribution }}"  
     - name: install packages
       apt: 
         name: "{{item}}"
