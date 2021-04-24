@@ -3,6 +3,9 @@
   hosts: clients
   become: true
   become_method: sudo
+  vars:
+       IMAGE_DEFAULT: "{{ BUILD_NUMBER }}"
+
   tasks:
     - name: install packages
       apt: 
@@ -41,6 +44,19 @@
         name: docker
         state: started
         enabled: yes
+
+    - name: pull Docker image
+      docker_image:
+        name: "{{ IMAGE_DEFAULT }}"
+        source: pull
+
+    - name: Create default containers
+      docker_container:
+        name: "{{IMAGE_DEFAULT}}"
+        image: "{{IMAGE_DEFAULT}}"
+        state: present
+      with_sequence: count=1
+
 
   handlers: 
     - name: restart docker
