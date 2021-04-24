@@ -36,6 +36,7 @@
         - docker-ce
         - docker-ce-cli
         - containerd.io
+        - python-docker
 
     - name: start docker
       service: 
