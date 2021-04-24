@@ -3,69 +3,64 @@
   hosts: clients
   become: true
   become_method: sudo
-  vars:
-       IMAGE_DEFAULT: "{{ BUILD_NUMBER }}"
 
   tasks:
-    - name: "Ansible | Print a variable"
-      debug:
-        msg: "The operating system is {{ IMAGE_DEFAULT }} {{BUILD_NUMBER}}"  
-  #   - name: install packages
-  #     apt: 
-  #       name: "{{item}}"
-  #       state: present
-  #       update_cache: yes
-  #     loop: 
-  #       - apt-transport-https
-  #       - ca-certificates
-  #       - curl
-  #       - gnupg
-  #       - lsb-release
+    - name: install packages
+      apt: 
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      loop: 
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg
+        - lsb-release
 
-  #   - name: add key
-  #     apt_key:
-  #       url: https://download.docker.com/linux/ubuntu/gpg
-  #       state: present
+    - name: add key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
 
-  #   - name: add repository docker
-  #     apt_repository:
-  #       repo: deb https://download.docker.com/linux/ubuntu bionic stable
-  #       state: present
+    - name: add repository docker
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
 
-  #   - name: install docker
-  #     apt: 
-  #       name: "{{item}}"
-  #       state: latest
-  #       update_cache: yes
-  #     loop: 
-  #       - docker-ce
-  #       - docker-ce-cli
-  #       - containerd.io
+    - name: install docker
+      apt: 
+        name: "{{item}}"
+        state: latest
+        update_cache: yes
+      loop: 
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
 
-  #   - name: start docker
-  #     service: 
-  #       name: docker
-  #       state: started
-  #       enabled: yes
+    - name: start docker
+      service: 
+        name: docker
+        state: started
+        enabled: yes
 
-  #   - name: pull Docker image
-  #     docker_image:
-  #       name: "{{ IMAGE_DEFAULT }}"
-  #       source: pull
+    - name: pull Docker image
+      docker_image:
+        name: "{{ BUILD_NUMBER }}"
+        source: pull
 
-  #   - name: Create default containers
-  #     docker_container:
-  #       name: "{{IMAGE_DEFAULT}}"
-  #       image: "{{IMAGE_DEFAULT}}"
-  #       state: present
-  #     with_sequence: count=1
+    - name: Create default containers
+      docker_container:
+        name: "web_{{BUILD_NUMBER}}"
+        image: "{{BUILD_NUMBER}}"
+        state: present
+      with_sequence: count=1
 
 
-  # handlers: 
-  #   - name: restart docker
-  #     service:
-  #       name: docker
-  #       state: restarted    
+  handlers: 
+    - name: restart docker
+      service:
+        name: docker
+        state: restarted    
 
 
     # - name: install nginx
