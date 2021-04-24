@@ -1,2 +1,2 @@
 [clients]
-ubuntu  ansible_ssh_host=3.239.37.72  ansible_ssh_port=22 ansible_user=ubuntu
+ubuntu  ansible_ssh_host=3.239.251.146  ansible_ssh_port=22 ansible_user=ubuntu
