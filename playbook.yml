@@ -32,11 +32,11 @@
         name: "{{item}}"
         state: latest
         update_cache: yes
-      loop: 
+      loop:
         - docker-ce
         - docker-ce-cli
         - containerd.io
-        - python-docker
+        - python3-pip
 
     - name: start docker
       service: 
@@ -46,17 +46,17 @@
 
     - name: pull Docker image
       docker_image:
-        name: "{{ BUILD_NUMBER }}"
+        name: "andreividnik59/devops:{{BUILD_NUMBER}}"
         source: pull
 
     - name: Create default containers
       docker_container:
         name: "web_{{BUILD_NUMBER}}"
-        image: "{{BUILD_NUMBER}}"
+        image: "andreividnik59/devops:{{BUILD_NUMBER}}"
+        ports:
+          - "81:80"
         state: present
       with_sequence: count=1
-
-
   handlers: 
     - name: restart docker
       service:
