@@ -47,13 +47,13 @@
     - name: remove old containers
       docker_container:
         state: absent
-        name: "web_{{BUILD_NUMBER - 1}}"
+        name: "web_{{OLD_NUMBER}}"
         force_kill: yes
 
     - name: remove old image
       docker_image:
         state: absent
-        name: andreividnik59/devops:{{BUILD_NUMBER - 1}}
+        name: "andreividnik59/devops:{{OLD_NUMBER}}"
 
     - name: pull Docker image
       docker_image:
