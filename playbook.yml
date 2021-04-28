@@ -44,6 +44,17 @@
         state: started
         enabled: yes
 
+    - name: remove old containers
+      docker_container:
+        state: absent
+        name: "web_{{BUILD_NUMBER - 1}}"
+        force_kill: yes
+
+    - name: remove old image
+      docker_image:
+        state: absent
+        name: andreividnik59/devops:{{BUILD_NUMBER - 1}}
+
     - name: pull Docker image
       docker_image:
         name: "andreividnik59/devops:{{BUILD_NUMBER}}"
@@ -55,26 +66,11 @@
         image: "andreividnik59/devops:{{BUILD_NUMBER}}"
         ports:
           - "81:80"
-        state: present
+        interactive: yes  
+        state: started
       with_sequence: count=1
   handlers: 
     - name: restart docker
       service:
         name: docker
-        state: restarted    
-
-
-    # - name: install nginx
-    #   apt: name=nginx update_cache=yes
-
-    # - name: copy nginx config file
-    #   copy: src=files/nginx.conf dest=/etc/nginx/sites-available/default
-    
-    # - name: enable configuration 
-    #   file: dest=/etc/nginx/sites-enabled/default src=/etc/nginx/sites-available/default state=link
-  
-    # - name: copy index.html
-    #   template: src=templates/index.html.j2 dest=/var/www/html/index.html mode=0644
-  
-    # - name: restart nginx
-    #   service: name=nginx state=restarted
+        state: restarted
