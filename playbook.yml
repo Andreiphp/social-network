@@ -67,7 +67,7 @@
         ports:
           - "81:80"
         interactive: yes  
-        state: present
+        state: started
       with_sequence: count=1
   handlers: 
     - name: restart docker
